@@ -1,5 +1,7 @@
 package com.ocr.anthony;
 
+import java.util.Scanner;
+
 public class Order {
     /**
      * Display all available menus in the restaurant.
@@ -26,7 +28,28 @@ public class Order {
         } else {
             System.out.println("Vous n'avez pas choisi de menu parmi les choix proposés");
         }
+    }
 
+    /**
+     * Run asking process for menu
+     */
+
+    public void runMenu(){
+        this.displayAvailableMenu();
+        Scanner sc = new Scanner(System.in);
+        int nb = sc.nextInt();
+        this.displaySelectedMenu(nb);
+
+    }
+
+    /**
+     * Display a selected side depending on all sides enable or not.
+     * All sides = vegetables, frites and rice
+     * No all sides = rice or not
+     * @param nbSide The selected Side
+     * @param allSidesEnable  enable display for all side or not
+     */
+    public void displaySelectedSide(int nbSide, boolean allSidesEnable) {
 
     }
 }
