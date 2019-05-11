@@ -3,6 +3,7 @@ package com.ocr.anthony;
 import java.util.Scanner;
 
 public class Order {
+    Scanner sc = new Scanner(System.in);
     /**
      * Display all available menus in the restaurant.
      */
@@ -36,35 +37,7 @@ public class Order {
      * Run asking process for menu
      */
 
-    public void runMenu() {
-        this.displayAvailableMenu();
-        Scanner sc = new Scanner(System.in);
-        int nbMenu = sc.nextInt();
-        this.displaySelectedMenu(nbMenu);
-        switch (nbMenu) {
-            case 1:
-                displayAvailableSide(true);
-                int nbSide = sc.nextInt();
-                displaySelectedSide(nbSide, true);
-                displayAvailableDrink();
-                int nbDrink = sc.nextInt();
-                displaySelectedDrink(nbDrink);
-                break;
-            case 2:
-                displayAvailableSide(true);
-                nbSide = sc.nextInt();
-                displaySelectedSide(nbSide, true);
-                break;
-            case 3:
-                displayAvailableSide(false);
-                nbSide = sc.nextInt();
-                displaySelectedSide(nbSide, false);
-                displayAvailableDrink();
-                nbDrink = sc.nextInt();
-                displaySelectedDrink(nbDrink);
-                break;
-        }
-    }
+
 
     /**
      * Display a selected side depending on all sides enable or not.
@@ -156,4 +129,46 @@ public class Order {
         System.out.println("3 - soda");
         System.out.println("Que souhaitez-vous comme boisson ?");
     }
+
+    public void runMenu() {
+        this.displayAvailableMenu();
+        int nbMenu = sc.nextInt();
+        this.displaySelectedMenu(nbMenu);
+        switch (nbMenu) {
+            case 1:
+                displayAvailableSide(true);
+                int nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                displayAvailableDrink();
+                int nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+            case 2:
+                displayAvailableSide(true);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                break;
+            case 3:
+                displayAvailableSide(false);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, false);
+                displayAvailableDrink();
+                nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+        }
+    }
+    /**
+     * Run asking process for several menus.
+     */
+    public void runMenus() {
+        System.out.println("Combien souhaitez vous commander de menu ?");
+        int menuQuantity = sc.nextInt();
+        int counter = 0;
+        while (counter < menuQuantity) {
+            runMenu();
+            counter = counter + 1;
+        }
+    }
+
 }
