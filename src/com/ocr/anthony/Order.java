@@ -107,7 +107,7 @@ public class Order {
      * @param allSideEnable enable display for all side or not
      */
     public void displayAvailableSide(boolean allSideEnable) {
-        System.out.println("Choix accompagnement");
+        System.out.println("Choix d'accompagnement");
         if (allSideEnable) {
             System.out.println("1 - légumes frais");
             System.out.println("2 - frites");
